@@ -61,24 +61,35 @@ public class DrawPanel  extends JPanel implements Runnable {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
+			int err=0;
 			if(gameThread == null) {
 				
-				name = JOptionPane.showInputDialog("Provide User Name:" );
+				
+				name = JOptionPane.showInputDialog("Provide NickName MAXIMUM 5 Char" );
 				
 				try {
-					
-					BufferedWriter bw = new BufferedWriter(new FileWriter("HighScore.txt"));
-					
-					bw.write(name+","+lvl+","+sc);
-					bw.close();
-					
-				} catch (IOException e1) {e1.printStackTrace();}
-				
-				if(name == null) {
+					nameLength(name);
+					err = 0;
+				} catch (Exception e2) {
+					JOptionPane.showMessageDialog(null, e2.getMessage());
+					err++;
+				}
+				if(err == 0) {
+					try {
 						
-				}else{
+						BufferedWriter bw = new BufferedWriter(new FileWriter("HighScore.txt"));
+						
+						bw.write(name+","+lvl+","+sc);
+						bw.close();
+						
+					} catch (IOException e1) {e1.printStackTrace();}
 					
-					System.exit(0);
+					if(name == null) {
+							
+					}else{
+						
+						System.exit(0);
+					}
 				}
 			}
 		}	
@@ -277,5 +288,13 @@ public class DrawPanel  extends JPanel implements Runnable {
 	}
 	public void update() {
 		cp.PaasiveIncome();
+	}
+	public void nameLength(String s)throws Exception {
+		
+		if(s.length() > 5) {
+			throw new Exception("Please enter 5 char as miaximum");
+		}
+		
+		return;
 	}
 }

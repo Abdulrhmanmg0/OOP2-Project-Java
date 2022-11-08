@@ -91,7 +91,7 @@ public class Main extends JFrame {
 		L1.add(P3);
 		L1.add(P4);
 		
-		mb.setBackground(Color.GREEN);
+		mb.setBackground(Color.decode("#006400"));
 		this.setJMenuBar(mb);
 		
 		this.setVisible(true);

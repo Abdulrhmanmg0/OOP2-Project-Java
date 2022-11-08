@@ -70,7 +70,6 @@ public class ClickPanel extends JPanel{
 		Details.setContentAreaFilled(false);
 		Details.setFocusPainted(false);
 		Details.setBorderPainted(false);
-		Details.setBorder(BorderFactory.createEmptyBorder(0,0,0,0));
 		Details.setForeground(Color.decode("#000000"));
 		
 		QUIT.setFont(new Font("Serif", Font.PLAIN, 20));
