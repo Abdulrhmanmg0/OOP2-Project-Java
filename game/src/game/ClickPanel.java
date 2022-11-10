@@ -13,7 +13,7 @@ public class ClickPanel extends JPanel{
 	 */
 	private static final long serialVersionUID = 1L;
 	public int Score = 0;
-	public int M = 1000;
+	public int M = 1;
 	public int Mpc = 1;
 	public int Hps = 0;
 	public int count = 0;
